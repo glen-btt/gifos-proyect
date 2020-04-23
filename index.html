@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GIFOS Proyect</title>
+    <link id="pagestyle" href="style/day-style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="assets/gifOF_logo.png" type="image/png" sizes="16x16">
+    
+</head>
+<body>
+    
+    <div class="mini-title">Bienvenidos a GIFOS.COM!!-------- Donde los GIFS están // Número de Visitas 578.374.653</div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="gifos-logo">
+            <div class="logo"><img></div>
+        </div>
+
+        <!-- MAIN MENU SECTION-->
+        <div class="buttons">
+           
+            <button class="button" type="button"><span><a href="/crear-gifos.html">Crear Gifos</a></span></button>
+                       
+            <div class="dropdown">
+                <span><button onclick="myFunction()" class="dropbtn" type="button">Elegir Tema</span></button>
+                <span class="arrow-dropdown"><button onclick="myFunction()" class="dropbtn" type="button"><img src="assets/dropdown.svg"></span></button>
+                        <div class="mini-menu" id="actions">
+                            <div class="box-style" href="#" onclick="swapStyleSheet('style/day-style.css')"><span>S</span>aylor Day</div>
+                            <div class="box-style" href="#" onclick="swapStyleSheet('style/night-style.css')"><span>S</span>aylor Night</div>
+                        </div>
+            </div>
+
+            <a href="/mis-gifos.html" class="personalAccess"><span>M</span>is GIFOS</a></span>
+        
+        </div>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <div class="search-nav-bar">
+        <div class="color-bar"><p>Buscar</p></div>
+
+        <div>
+            <form class= "grey-section-form" method="post">
+            <input class="white-part" id="searchText" onkeyup="swapStyleButton(this)" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" type="text">
+            <button onclick="searchFunction();" type="button" id="search-button"><img id="searchIcon" src="assets/lupa.svg">Buscar</button>
+            </form>
+        </div>
+        
+    </div>
+    
+    <!-- CODE -->
+    <script src="javascript/Search-Functions.js"></script>  
+    
+    
+    <!-- RECOMMENDED GIFS 1 -->
+    <div class="section1" id="recommended-gifs">
+        <div class="middle-tittles"><p>Hoy te sugerimos</p></div>
+
+        <div class="grid-container">
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="word">#Love</span><img class= "close-button" src="./assets/button close.svg"></div>
+            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif" src="" alt="" ><a href="" id="button-trend-1"><button class="blue-button" type="button">Ver Mas...</button></a></div></div>
+            
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Ovnis</span><img class= "close-button" src="./assets/button close.svg"></div>
+            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif1" src="" alt="" ><a href="" id="button-trend-2"><button class="blue-button" type="button">Ver Mas...</button></a></div></div>
+            
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Purple</span><img class= "close-button" src="./assets/button close.svg"></div>  
+            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif2" src="" alt="" ><a href="" id="button-trend-3"><button class="blue-button" type="button">Ver Mas...</button></a></div></div> 
+            
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Story</span><img class= "close-button" src="./assets/button close.svg"></div>
+            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif3" src="" alt="" ><a href="" id="button-trend-4"><button class="blue-button" type="button">Ver Mas...</button></a></div></div> 
+        </div>
+     
+    </div>
+
+    <!-- RECOMMENDED GIFS 2 -->
+
+    <div class="section2" id="trends">
+        <div class="middle-tittles"><p>Tendencias:</p></div>
+        <div id="gifs-img-block123"></div>
+    </div>
+
+    <div id="trend-imgs"></div>
+
+</div>
+
+    <!-- JAVASCRIPT FUNCTIONS -->
+    <script src="javascript/Home-Functions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crear Mis GIFos</title>
+    <link id="pagestyle" href="style/day-style.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="assets/gifOF_logo.png" type="image/png" sizes="16x16">
+    
+</head>
+<body>
+    <script src="javascript/Functions.js"></script>
+    <script src="javascript/Create-gifos-functions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+    <div class="mini-title">Bienvenidos a GIFOS.COM!!-------- Donde los GIFS están // Número de Visitas 578.374.653</div>
+
+<div class="wrapper">
+    <header class="header">
+        <div class="gifos-logo">
+            <div><a href="/crear-gifos.html"><img src="./assets/arrow.svg"></a></div>
+            <div class="logo"><img></div>
+        </div>
+
+        
+    </header>
+
+
+    <div class="alert-section">
+        <div class="color-bar"><p>Un chequeo antes de empezar</p></div>
+
+        <div class="text-section1">
+            <div id="container_video">
+                <video id="video" >
+                    </video>
+            </div>
+        
+            <div class="buttons">
+                <script>getStreamAndRecord();</script>
+                <button onclick="getStreamAndRecord()" class="button" type="button"><span><img src="assets/camera.svg"><a href="#gif3">  Capturar</a></span></button></div>
+                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Listo</a></span></button></div>
+                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Repetir Captura</a></span></button></div>
+                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3"> Contador</a></span></button></div>
+                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Subir Guifo</a></span></button></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
