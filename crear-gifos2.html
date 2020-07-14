@@ -5,49 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crear Mis GIFos</title>
-    <link id="pagestyle" href="style/day-style.css" rel="stylesheet" type="text/css"/>
+    <link id="page_style" href="style/day-style.css" rel="stylesheet" type="text/css"/>
     <link rel="icon" href="assets/gifOF_logo.png" type="image/png" sizes="16x16">
     
+
 </head>
 <body>
-    <script src="javascript/Functions.js"></script>
-    <script src="javascript/Create-gifos-functions.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
+    <!-- JAVASCRIPT LIBRARY RECORD RTC -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script> <!-- video library so you can record the gif img -->
+   
     <div class="mini-title">Bienvenidos a GIFOS.COM!!-------- Donde los GIFS están // Número de Visitas 578.374.653</div>
 
 <div class="wrapper">
     <header class="header">
         <div class="gifos-logo">
-            <div><a href="/crear-gifos.html"><img src="./assets/arrow.svg"></a></div>
-            <div class="logo"><img></div>
+            <div><a href="/crear-gifos.html"><img src="./assets/arrow.svg" alt="arrow"></a></div>
+            <div class="logo" id="reload-page"></div>
         </div>
 
         
     </header>
 
-
-    <div class="alert-section">
-        <div class="color-bar"><p>Un chequeo antes de empezar</p></div>
+    <!-- STEPS 1 2 3  -->
+    <div class="alert-section" id="creation-section">
+        <div class="color-bar"><p id="text-above-in-gradient">Un chequeo antes de empezar</p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>
 
         <div class="text-section1">
+
             <div id="container_video">
-                <video id="video" >
-                    </video>
+                <video id="user_video2"></video>
+                <img id="user_video" >
+                <p id="waiting-text"></p>                   
             </div>
-        
+          
             <div class="buttons">
-                <script>getStreamAndRecord();</script>
-                <button onclick="getStreamAndRecord()" class="button" type="button"><span><img src="assets/camera.svg"><a href="#gif3">  Capturar</a></span></button></div>
-                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Listo</a></span></button></div>
-                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Repetir Captura</a></span></button></div>
-                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3"> Contador</a></span></button></div>
-                <button onclick="getStreamAndRecord()" class="button" type="button" id="btn-start-recording"><span><img src="assets/camera.svg"><a href="#gif3">  Subir Guifo</a></span></button></div>
+                <button  onclick="startRecording()" class="button" type="button" id='btn-start-recording'><img class="camera-icon">Capturar</button>
+                <div class="red-button"><button  class="hidden-button2" type="button" id="btn-stop-recording"><img src="assets/recording.svg" alt="recording"> Listo</button></div>
+                <button  class="hidden-button3" type="button" id="btn-repeat-capture" ><a href="/crear-gifos2.html">Repetir Captura</a> </button>
+                <button  class="hidden-button1" type="button" id="btn-upload-guifo"><span> Subir Guifo</span></button>                
             </div>
         </div>
 
     </div>
 
+
+    <!-- UPLOADING YOUR GUIFO  -->
+    <div class="alert-section" id="uploading-section">
+        <div class="color-bar"><p>Subiendo tu guifo</p><img class="close-button" src="./assets/button-close.svg" alt="close-button"></div>
+
+        <div class="uploading-gif">
+            <img src="assets/globe_img.png" alt="loading-img">
+            <p class="bold-text-title" id="centered-text-and-bold">Estamos subiendo tu guifo...</p>
+            <p id="centered-text">Tiempo restante: <span id="cross">39 años</span> algunos minutos</p>          
+                        
+        </div>
+
+        <div class="right-button" id="left-position">           
+            <button class="grey-button" type="button" id="btn-2"><span><a href="/crear-gifos2.html">  Cancelar</a></span></button></div>
+        </div>
+    </div>
+
+    <!-- SUCCESS  -->
+    <div class="alert-section" id="last-step">
+        <div class="color-bar"><p>Guifo Subido Con Éxito</p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>
+
+        <div class="alert-section2">
+
+            <div class="container-video" id="container_video">
+                <img id="preview" src="">
+            </div>
+
+            <div class="buttons">    
+                <p class="bold-text-title">Guifo creado con éxito</p>       
+                <button onclick="copyLink();" class="grey-button" type="button" id="btn-2">  Copiar Enlace Guifo</button>
+                <button class="grey-button" type="button" id="download-button"> Descargar Guifo</button>
+                <input type= "text" id="hidden-url">
+                
+            </div>
+        </div>
+
+        <div class="right-button">
+        <button href="/crear-gifos.html" class="button" type="button" id="btn-3"><a href="/crear-gifos.html">Listo</a></button>
+        </div>
+
+    </div>
+
+    <!-- MY GIFS SECTION  -->
+    <div class="section1" id="recommended-gifs">
+        <div class="middle-tittles"><p>MIS GIFOS</p></div>
+
+        <div class="grid-item-search" id="saved-gifs"></div>
+    </div>
+
 </div>
+
+<footer><p class="footer-text">Desarrollado por <a href="https://www.linkedin.com/in/gbotto/">Glenda Botto</a> para <a href="http://acamica.com">Acámica</a> 2020</p></footer>
+
+<!-- JAVASCRIPT FUNCTIONS -->
+<script src="javascript/Home-Functions.js"></script> <!-- style -->
+<script src="javascript/Create-gifos-functions.js"></script> <!-- create gifs code -->
+
+<script>previewCamera();</script> <!-- start the camera preview-->
+<script>showGif();</script> <!-- shows the gif below-->
 
 </body>
 </html>

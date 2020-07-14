@@ -1,0 +1,871 @@
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch:400,400i,700&display=swap');
+
+/*COLORS FOR DAY STYLE*/
+:root {
+    --gradient-bar: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%); /*COLORS FOR DAY STYLE*/
+    --main-logo: url("../assets/gifOF_logo.png") no-repeat;
+    --camera-icon: url("../assets/camera.svg") no-repeat;
+
+    --button-background: #F7C9F3;
+    --button-box-shadow:inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    --button-border: 1px solid #110038;
+    --dotted-border:1px dotted #110038;
+    
+    --secondary-button-background:#FFF4FD; 
+    --secondary-button-border: 1px solid #110038; 
+    --secondary-button-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+
+    --background-stop-recording:#FF6161;
+    --shadow-stop-recording: inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF;
+}
+  /*to use ir name var(--gradient-bar)
+  var(--button-background)*/
+
+    
+
+
+/*START ---General Style*/
+body{
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-size: 12px;
+    color: #110038;
+    background-color: white;
+}
+
+a{
+    color: #110038;
+    text-decoration: none;
+}
+
+.wrapper{
+    margin: 50px;
+}
+
+.gifos-logo{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.gifos-logo .logo{
+    width: 102px;
+    height: 64px;
+    margin: 5px;
+    display: inline-block;
+    background: var(--main-logo);
+
+}
+
+/*START ---1st Mini Title Style*/
+.mini-title{
+    background-image: var(--gradient-bar);
+    color: White;
+    box-shadow: 0 1px 0 0 #110038;
+    margin: 0;
+}
+
+/*START ---Header and search buttons*/
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
+}
+
+#reload-page{
+    cursor: pointer;
+}
+
+
+/*START ---All soft pink BUTTONS STYLE*/
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+.button{ /*soft pink button*/
+    background: var(--button-background);
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.button:hover {
+    border: var(--dotted-border);
+}
+
+.button img{
+    margin-right: 10px;
+}
+
+.camera-icon{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    display: inline-flex;
+    background: var(--camera-icon);
+}
+
+
+/*para que el boton cambie de color cuando se ingresa texto*/
+#search-button{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#search-button img{
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+}
+
+
+#search-button:disabled {
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+ 
+}
+
+#search-button:enabled {
+    background:var(--button-background);
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+  
+#search-button:hover {
+    border: 1px dotted #110038;
+}
+
+.search-button{
+    margin: 15px;
+    align-content: flex-end;
+}
+.dropbtn1{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dropdown button{ /*soft pink dropdown button*/
+    background: var(--button-background);
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin-right: -3px;
+    
+}
+
+.dropdown button:hover{
+    border: 1px dotted #110038;
+    
+}
+
+/* START - Created for the dropdown button*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.mini-menu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#actions{
+    list-style: none;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    margin: 0px;
+}
+
+.box-style{
+    background: #FFF4FD;
+    border: 0,5px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    height: 36px;
+    margin: 10px;
+    text-indent: 10px;
+    
+    display: block;
+    
+    background: #F0F0F0;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+
+.box-style span{
+    text-decoration: underline;
+}
+
+.box-style:hover{
+    background: #FFF4FD;
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.dropdown-button:hover #actions{
+    display: block;
+    position: absolute;
+    height: 102px;
+}
+
+.show { /*created for the  javascript style*/
+    display: block;
+}
+
+/* END - Created for the dropdown button*/
+
+.personalAccess{
+    margin:10px;
+}
+
+.personalAccess:hover{
+    border: var(--dotted-border);
+}
+
+.personalAccess span{
+    text-decoration: underline;
+}
+
+/*END ---All soft pink BUTTONS STYLE*/
+
+
+
+/*START --- Trends Section that include 4 gifts*/
+
+.gifs-trend-img{
+    display: flex;
+    flex-flow: column;
+    height: 280px;
+    width: 280px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.blue-button{
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    color: white;
+    height: 34px;
+    z-index: 2;
+    
+    align-items: baseline;   
+    cursor: pointer;
+    font-family: 'Chakra Petch', sans-serif;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+
+/*General Gradient Pink bars*/
+.color-bar{
+    background-image: var(--gradient-bar);
+    color: White;
+    margin: 0.1%;
+    padding: 0.1%;
+    height: 24px;
+    text-align: left;
+}
+
+.color-bar p{
+    margin: 5px;
+}
+
+.mini-color-bar .gif-name{
+    align-self: flex-start;
+}
+
+
+/*START--------First Search Bar*/
+.search-nav-bar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 99px;
+    margin-bottom: 20px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.grey-section-form{
+    display: flex;
+    flex-wrap: nowrap;  
+}
+
+.white-part{
+    background: #FFFFFF;
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    width: 89%;
+    height: 48px;
+    margin-left: 15px;
+    margin-top: 10px;
+    font-family: 'Chakra Petch', sans-serif;
+    text-indent: 10px;
+  
+}
+
+/*START --- related terms section*/
+.related-terms{
+    flex-direction: column;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    margin-top: 5px;
+    z-index: 100;
+    display: none;
+
+}
+
+.box-style2{
+    text-indent: 10px;
+    width: 90%;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.box-style2:hover{
+    border: var(--dotted-border);
+}
+
+
+
+/*START --- style for middle titles*/
+.middle-tittles{
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.middle-tittles p{
+    margin: 5px;
+}
+
+/*END --- style for middle titles*/
+
+/*start --- grid recommended gifs*/
+.grid-container {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: auto auto auto auto;
+}
+
+.box-shadow{
+    border: 1px solid white;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #FFFFFF;
+}
+  
+.grid-item-mini-color-bar {
+    background-image: var(--gradient-bar); 
+    color: White;
+    text-align: left;
+    border: 1px solid white;
+
+    height: 24px;
+    margin: 0.1%;
+    padding: 0.1%;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+/*start - big container with pic and color bar of 2nd trends*/
+.gif-trend-bar{
+    display:flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+
+.grid-item-mini-color-bar2 {
+    background-image: var(--gradient-bar); 
+    color: White;
+    
+       
+    position: absolute;
+    z-index: 3;
+    align-self: flex-end;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+}
+
+
+.grid-item-mini-color-bar2 p{
+    vertical-align: middle;
+}
+
+.gif-trend-bar:hover .grid-item-mini-color-bar2{
+    height: 30px;
+}
+
+.gif-trend-img{
+    position: relative;
+    display: block;
+    height: 296px;
+}
+  
+.gif-trend-img:hover{
+      border: var(--dotted-border);
+}
+
+/*END - big container with pic and color bar of 2nd trends*/
+
+.grid-item-mini-color-bar img{
+    margin-right:8px;
+}
+
+.grid-item-mini-color-bar span{
+    margin-left: 8px;
+}
+
+.grid-item{
+    display: flex;
+    align-items: baseline;
+}
+
+.grid-item:hover{
+    border: var(--dotted-border);
+}
+
+
+.grid-item form{
+    position: absolute;
+    z-index: 5;
+    align-self: flex-end;
+}
+
+
+.grid-item img{
+    height: 200px;
+    width: 100%;
+    margin: 0.1%;
+    padding: 0.1%;
+}
+
+.trend-imgs{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: auto auto auto auto;
+}
+
+
+
+/*START - seccion para crear gifos*/
+.alert-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 20px;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+.text-section1{
+    margin:20px;
+}
+
+.START-button{
+    margin: 15px;
+    align-content: flex-end;
+}
+
+.bold-text-title{
+    font-size: 16px;
+    font-weight: bold;
+    text-indent: 10px;
+}
+
+.text-box span{
+    font-weight: bold;
+}
+
+.mini-section-tittle{
+    display: flex;
+    align-items: center;
+}
+
+
+.color-bar img{
+    margin: 5px;
+}
+
+.alert-section .color-bar{
+    width: 99%;
+    height: 24px;
+    margin: 0.1%;
+    padding: 0.1%;
+
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+/*START --- Video settings*/
+
+#user_video2{
+    
+    height:300px;
+    align-self: center;
+}
+
+#waiting-text{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.hidden-button1 .hidden-button2 .hidden-button3{
+    display:none;
+}
+
+
+.hidden-button1 .hidden-button2 .hidden-button3:hover {
+    border: var(--dotted-border);
+}
+
+.red-button{
+    display: flex;
+    align-content: center;
+}
+
+.hidden-button1{
+    display:none;
+
+    background: var(--button-background);
+    border: var(--button-border); 
+    box-shadow: var(--button-box-shadow);
+    
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin: 7px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/*red button for capture*/
+.hidden-button2{
+    display:none;
+
+    color:white;
+    background: var(--background-stop-recording);
+    border: var(--button-border);
+    box-shadow: var(--shadow-stop-recording);
+    
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    align-content: center;
+}
+
+/*grey button to repeat capture*/
+.hidden-button3{
+    display:none;
+
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.grey-button{
+    background: var(--secondary-button-background);
+    border: var(--secondary-button-border);
+    box-shadow: var(--secondary-button-shadow);
+
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+    height: 36px;
+    margin: 7px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.grey-button:hover{
+    border: var(--dotted-border);
+}
+
+.alert-section2{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: auto auto;
+}
+
+#cross{
+    text-decoration: line-through;
+}
+
+.alert-section2 .container-video{
+    background-color:  white;
+    margin-top: 10px;
+    height: 191px;
+    width: 360px;
+    
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.container-video{
+    display: flex;
+    justify-content: center;
+}
+
+.container-video img{
+    background: #FFFFFF;
+    border: 2px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+#centered-text{
+    text-align: center;
+}
+
+#centered-text-and-bold{
+    text-align: center;
+    text-decoration: solid;
+}
+
+.alert-section2 .buttons{
+    display:flex;
+        
+    align-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    width: max-content;
+}
+
+/*display no section until js activates*/
+#uploading-section{
+    display: none;
+}
+
+#last-step{
+    display: none;
+}
+
+.uploading-gif{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 120px 160px 120px 160px;
+    
+       
+    align-content: center;
+    flex-direction: column;
+    background:white;
+
+    border: 1px solid #979797;
+    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.uploading-gif img{
+    height:38px;
+    width: 38px;
+    align-self: center;
+}
+
+#left-position{
+    align-self: flex-end;
+    margin:5px;
+}
+
+#btn-2{
+    align-self: flex-end;
+    width: 100%;
+}
+
+#download-button{
+    align-self: flex-end;
+    width: 100%;
+}
+
+.right-button{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+
+
+#hidden-url{
+    opacity: 0;
+}
+
+/*when a search is launched*/
+.grid-item-search{
+    display: flex;
+    align-items: baseline;
+}
+
+.grid-item-search img{
+    height: 200px;
+    width: 100%;
+    margin: 0.1%;
+    padding: 0.1%;
+}
+
+#images-from-fetch{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: auto auto auto auto;
+}
+
+#images-from-fetch img:hover{
+    border: 1px dotted #110038;
+    color: white;
+}
+
+#search-result{
+    display: none;
+}
+
+/*my gifos section*/
+.grid-item-search{
+    display: flex;
+    align-items: baseline;
+}
+
+.grid-item-search img{
+    height: 200px;
+    width: 100%;
+    margin: 0.1%;
+    padding: 0.1%;
+}
+
+#saved-gifs{
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: auto auto auto auto;
+}
+
+#saved-gifs img:hover{
+    border: 1px dotted #110038;
+    color: white;
+}
+
+/*searched terms section*/
+#search-result2 p{
+    display: inline-block;
+    
+    background-color: #4180F6;
+    color: white;
+   
+    border: 1px solid white;
+    
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0;
+    
+    line-height: 18px;
+    
+    margin: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.footer-text{
+    color: black;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.footer-text a{
+    color:#4180F6;
+}
+

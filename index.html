@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GIFOS Proyect</title>
-    <link id="pagestyle" href="style/day-style.css" rel="stylesheet" type="text/css"/>
+    <title>GIFOS.COM!! Donde los GIFS están</title>
+    <link id="page_style" href="style/day-style.css" rel="stylesheet" type="text/css"/>
+
     <link rel="icon" href="assets/gifOF_logo.png" type="image/png" sizes="16x16">
     
 </head>
 <body>
     
     <div class="mini-title">Bienvenidos a GIFOS.COM!!-------- Donde los GIFS están // Número de Visitas 578.374.653</div>
-
+    
 <div class="wrapper">
     <header class="header">
         <div class="gifos-logo">
-            <div class="logo"><img></div>
+            <div class="logo" id="reload-page"><a href="/index.html"></a></div>
         </div>
 
         <!-- MAIN MENU SECTION-->
         <div class="buttons">
-           
-            <button class="button" type="button"><span><a href="/crear-gifos.html">Crear Gifos</a></span></button>
+
+            <form action="/crear-gifos.html"><button class="button" type="submit" ><span>Crear Gifos</span></button></form>
                        
             <div class="dropdown">
-                <span><button onclick="myFunction()" class="dropbtn" type="button">Elegir Tema</span></button>
-                <span class="arrow-dropdown"><button onclick="myFunction()" class="dropbtn" type="button"><img src="assets/dropdown.svg"></span></button>
+                <button onclick="myFunction()" class="dropbtn1" type="button">Elegir Tema</button>
+                <span class="arrow-dropdown"><button onclick="myFunction()" class="dropbtn" type="button"><img src="assets/dropdown.svg" alt="dropdown-button"></button></span>
+                        
                         <div class="mini-menu" id="actions">
-                            <div class="box-style" href="#" onclick="swapStyleSheet('style/day-style.css')"><span>S</span>aylor Day</div>
-                            <div class="box-style" href="#" onclick="swapStyleSheet('style/night-style.css')"><span>S</span>aylor Night</div>
+                            <div class="box-style" onclick="swapStyleSheet('style/day-style.css')"><span>S</span>aylor Day</div>
+                            <div class="box-style" onclick="swapStyleSheet('style/night-style.css')"><span>S</span>aylor Night</div>
                         </div>
             </div>
 
-            <a href="/mis-gifos.html" class="personalAccess"><span>M</span>is GIFOS</a></span>
+            <a href="/mis-gifos.html" class="personalAccess"><span>M</span>is GIFOS</a>
         
         </div>
     </header>
@@ -44,50 +46,68 @@
 
         <div>
             <form class= "grey-section-form" method="post">
-            <input class="white-part" id="searchText" onkeyup="swapStyleButton(this)" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" type="text">
-            <button onclick="searchFunction();" type="button" id="search-button"><img id="searchIcon" src="assets/lupa.svg">Buscar</button>
+            <input class="white-part" id="searchText" onkeydown="keyCode(event)" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" type="text">
+            <button onclick="searchFunction();" type="button" id="search-button" disabled><img id="searchIcon" src="assets/lupa_light.svg" alt="search-icon" >Buscar</button>
             </form>
         </div>
+
+        <div class="related-terms" id="related-terms-section">
+            <button class="box-style2" onclick="setTextToInput1();"><span id="related-term-1"></span></button>
+            <button class="box-style2" onclick="setTextToInput2();"><span id="related-term-2"></span></button>
+            <button class="box-style2" onclick="setTextToInput3();"><span id="related-term-3"></span></button>
+        </div>
+            
         
     </div>
     
-    <!-- CODE -->
+    <!-- CODE FOR SEARCH OPTIONS -->
     <script src="javascript/Search-Functions.js"></script>  
     
-    
+        
     <!-- RECOMMENDED GIFS 1 -->
     <div class="section1" id="recommended-gifs">
         <div class="middle-tittles"><p>Hoy te sugerimos</p></div>
 
-        <div class="grid-container">
-            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="word">#Love</span><img class= "close-button" src="./assets/button close.svg"></div>
-            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif" src="" alt="" ><a href="" id="button-trend-1"><button class="blue-button" type="button">Ver Mas...</button></a></div></div>
+        <div class="grid-container" id="test">
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><p id="word1"></p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>
+            <div class="grid-item" id="grid-item1"><form id="button-trend-1"><button class="blue-button" type="submit">Ver Mas...</button></form></div></div>
             
-            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Ovnis</span><img class= "close-button" src="./assets/button close.svg"></div>
-            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif1" src="" alt="" ><a href="" id="button-trend-2"><button class="blue-button" type="button">Ver Mas...</button></a></div></div>
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><p id="word2"></p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>
+            <div class="grid-item" id="grid-item2"><form id="button-trend-2"><button class="blue-button" type="submit">Ver Mas...</button></form></div></div>
             
-            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Purple</span><img class= "close-button" src="./assets/button close.svg"></div>  
-            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif2" src="" alt="" ><a href="" id="button-trend-3"><button class="blue-button" type="button">Ver Mas...</button></a></div></div> 
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><p id="word3"></p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>  
+            <div class="grid-item" id="grid-item3"><form id="button-trend-3"><button class="blue-button" type="submit">Ver Mas...</button></form></div></div>
             
-            <div class="box-shadow"><div class="grid-item-mini-color-bar"><span id="">#Story</span><img class= "close-button" src="./assets/button close.svg"></div>
-            <div class="grid-item"><img class= "gif-trend-img" id="preview_gif3" src="" alt="" ><a href="" id="button-trend-4"><button class="blue-button" type="button">Ver Mas...</button></a></div></div> 
+            <div class="box-shadow"><div class="grid-item-mini-color-bar"><p id="word4"></p><img class= "close-button" src="./assets/button-close.svg" alt="close-button"></div>
+            <div class="grid-item" id="grid-item4"><form id="button-trend-4"><button class="blue-button" type="submit">Ver Mas...</button></form></div></div> 
         </div>
      
     </div>
 
     <!-- RECOMMENDED GIFS 2 -->
-
     <div class="section2" id="trends">
-        <div class="middle-tittles"><p>Tendencias:</p></div>
-        <div id="gifs-img-block123"></div>
+       <div class="middle-tittles"><p>Tendencias:</p></div>
+
+       <div class="trend-imgs" id="trend-imgs2">
+            
+       </div>
+
     </div>
-
-    <div id="trend-imgs"></div>
-
-</div>
+    
+    <!-- SEARCH SECTION -->
+    <div class="section2" id="search-result">
+        <div id="search-result2"></div>
+        <div class="middle-tittles"><p>Resultados de la busqueda: <span id="searched-text-html"></span></p></div>
+        <div class="grid-item-search" id="images-from-fetch"></div>
+    </div>
 
     <!-- JAVASCRIPT FUNCTIONS -->
     <script src="javascript/Home-Functions.js"></script>
+    <script>showSavedTerms();</script> <!-- shows the words below-->
+
+    <footer><p class="footer-text">Desarrollado por <a href="https://www.linkedin.com/in/gbotto/">Glenda Botto</a> para <a href="http://acamica.com">Acámica</a> 2020</p></footer>
+
+</div>
 
 </body>
 </html>
