@@ -15,5 +15,5 @@ Functions: see your uploaded gifs, upload a new gif using your camera, search an
 1- Day Style and search bar
 ![screenshot-1-day-style](https://user-images.githubusercontent.com/58470524/87615233-9ef83380-c6e8-11ea-8696-0febe7247add.png)
 
-2 - Night Style and recommended terms
-
+2 - Night Style and recommended terms section
+![screenshot-2-night style](https://user-images.githubusercontent.com/58470524/87620806-dfaa7980-c6f5-11ea-93a7-4324bcb9ed92.png)
